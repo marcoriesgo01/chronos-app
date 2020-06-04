@@ -75,15 +75,9 @@ a {
 .welcome-user {
     display: inline-block;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
-.dashboard-introduction-text {
-    margin-left: 1em;
-    margin-bottom: 2em;
-    color: rgb(101, 101, 101);
-
-}
 
 .register-title {
     margin-top: 60px;
@@ -170,45 +164,6 @@ a {
     text-decoration: underline;
 }
 
-#budget-form-button {
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
-    height: 37px;
-    width: 100px;
-    background: white;
-    border: 1px solid rgba(20,112,147,1);
-    color: rgba(20,112,147,1);
-    font-family: "Railway Regular";
-    box-shadow: 0 0 9px -2px rgba(0, 0, 0, 0.5);
-}
-
-#budget-form-button:hover {
-    text-decoration: underline;
-    box-shadow: 0 012px -4px rgba(0, 0, 0, 0.8);
-}
-
-#budget-form-cancel-button {
-    margin-top: 20px;
-    margin-right: 20px;
-    height: 37px;
-    width: 100px;
-    background: white;
-    border: 1px solid rgb(101, 101, 101);
-    color: rgb(101, 101, 101);
-    font-family: "Railway Regular";
-    box-shadow: 0 0 9px -2px rgba(0, 0, 0, 0.5);
-}
-
-#budget-form-cancel-button:hover {
-    text-decoration: underline;
-    box-shadow: 0 012px -4px rgba(0, 0, 0, 0.8);
-}
-
-.category-container {
-    margin-left: 4%;
-    margin-right: 4%;
-}
 
 @keyframes float {
     0% {
@@ -265,12 +220,20 @@ a {
     width: 100%;
 }
 
-#trash-button {
-    background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
-}
 
 .container {
     width: 100%;
+}
+
+.dashboard-nav-header {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 1em;
+}
+
+#how-help-text {
+    margin-bottom: 1em;
+    color: rgb(101, 101, 101);
 }
 
 #linked-accounts-header {
@@ -297,4 +260,20 @@ main {
     height: 50px;
     padding-top: 7px;
     padding-left: 5%;
+}
+
+
+
+#category-main-container {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.category-name {
+
+}
+
+.category-description {
+    color: rgb(101, 101, 101);
+    font-size: 22px;
 }

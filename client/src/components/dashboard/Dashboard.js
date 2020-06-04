@@ -40,21 +40,19 @@ class Dashboard extends Component {
       // User has no accounts linked
       dashboardContent = (
         <div className="row">
-          <div className="col s12">
+          <div className="dashboard-nav-header">
             <h4 className="welcome-user">
               Welcome, {user.name.split(" ")[0]}
             </h4>
             <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="log-out-button">
               Logout
             </button>
-          </div>
-          <div className="dashboard-introduction-text">
-            <h5>What are you hoping to find today?</h5>
+            <h5 id="how-help-text">What are you hoping to find today?</h5>
           </div>
           <div className="categories-container">
           {this.state.categories.map( category => {
               return (
-                <Link to={`/category/${category._id}`}>
+                <Link to={{pathname: `/category/${category._id}`, state: {category: category}}}>
                 <div className="card">
                     <div className="card-image">
                         <img src={category.image} alt="category"/>

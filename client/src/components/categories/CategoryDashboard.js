@@ -4,62 +4,61 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/authActions";
 
-import { Doughnut} from 'react-chartjs-2';
 
 
-class Budgets extends Component {
+class CategoryDashboard extends Component {
 
-  state = {
-    user: this.props.auth,
-    budgets: [],
-    budgetId: "",
-    name: "",
-    amount: "",
-    addBudget: false,
-    editBudget: false
+  // state = {
+  //   user: this.props.auth,
+  //   budgets: [],
+  //   budgetId: "",
+  //   name: "",
+  //   amount: "",
+  //   addBudget: false,
+  //   editBudget: false
 
-  }
+  // }
 
-  componentDidMount() {
-    this.getBudgets()
-  }
+  // componentDidMount() {
+  //   this.getBudgets()
+  // }
 
-  handleChange = event => {
-    this.setState({ [event.target.id]: event.target.value });
-  };
+  // handleChange = event => {
+  //   this.setState({ [event.target.id]: event.target.value });
+  // };
 
   
-  getBudgets = () => {
-    fetch('/api/budgets/' + this.state.user.user.id)
-    .then(res => res.json())
-    .then(jsonedBudgets => this.setState({budgets: jsonedBudgets}))
-    .catch( error => console.error(error))
-  }
+  // getBudgets = () => {
+  //   fetch('/api/budgets/' + this.state.user.user.id)
+  //   .then(res => res.json())
+  //   .then(jsonedBudgets => this.setState({budgets: jsonedBudgets}))
+  //   .catch( error => console.error(error))
+  // }
 
-  handleBudgetSubmit = (event) => {
-      event.preventDefault()
-      fetch('/api/budgets/create',{
-      body: JSON.stringify({
-        userId: this.state.user.user.id,
-        name: this.state.name,
-        amount: this.state.amount
-      }),
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => {
-      this.setState({
-          name: '',
-          amount: ''
-      })
-    })
-    .then(this.handleCloseBudgetForm)
-    .then(this.getBudgets)
-    .catch(error => console.error({ Error: error }));
-  }
+  // handleBudgetSubmit = (event) => {
+  //     event.preventDefault()
+  //     fetch('/api/budgets/create',{
+  //     body: JSON.stringify({
+  //       userId: this.state.user.user.id,
+  //       name: this.state.name,
+  //       amount: this.state.amount
+  //     }),
+  //     method: 'POST',
+  //     headers: {
+  //       'Accept': 'application/json, text/plain, */*',
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //   .then(res => {
+  //     this.setState({
+  //         name: '',
+  //         amount: ''
+  //     })
+  //   })
+  //   .then(this.handleCloseBudgetForm)
+  //   .then(this.getBudgets)
+  //   .catch(error => console.error({ Error: error }));
+  // }
 
   
   
@@ -69,122 +68,83 @@ class Budgets extends Component {
     this.props.logoutUser();
   };
 
-  //Form conditionals
+  // //Form conditionals
 
-  handleOpenBudgetForm = () => {
-    this.setState({addBudget: true})
-    this.handleCloseEditForm()
-  }
+  // handleOpenBudgetForm = () => {
+  //   this.setState({addBudget: true})
+  //   this.handleCloseEditForm()
+  // }
 
-  handleCloseBudgetForm = () => {
-    this.setState({addBudget: false})
-  }
+  // handleCloseBudgetForm = () => {
+  //   this.setState({addBudget: false})
+  // }
 
-  deleteBudget = id => {
-    fetch('/api/budgets/' + id, {
-      method: 'DELETE'
-    }).then( res => {
-      const budgetsArr = this.state.budgets.filter( budget => {
-        return budget.id !== id
-      })
-      this.setState({
-        budgets: budgetsArr
-      })
-    }).then(this.getBudgets())
-  }
+  // deleteBudget = id => {
+  //   fetch('/api/budgets/' + id, {
+  //     method: 'DELETE'
+  //   }).then( res => {
+  //     const budgetsArr = this.state.budgets.filter( budget => {
+  //       return budget.id !== id
+  //     })
+  //     this.setState({
+  //       budgets: budgetsArr
+  //     })
+  //   }).then(this.getBudgets())
+  // }
 
-  handleEditForm = (budget) => {
-    this.setState({
-      editBudget: true,
-      addBudget: false,
-      budgetId: budget._id,
-      name: budget.name,
-      amount: budget.amount
+  // handleEditForm = (budget) => {
+  //   this.setState({
+  //     editBudget: true,
+  //     addBudget: false,
+  //     budgetId: budget._id,
+  //     name: budget.name,
+  //     amount: budget.amount
 
-    })
-  }
+  //   })
+  // }
 
-  handleCloseEditForm = () => {
-    this.setState({
-      editBudget: false,
-      budgetId: "",
-      name: "",
-      amount: ""
-    })
-  }
+  // handleCloseEditForm = () => {
+  //   this.setState({
+  //     editBudget: false,
+  //     budgetId: "",
+  //     name: "",
+  //     amount: ""
+  //   })
+  // }
 
-  handleEditBudgetSubmit = () => {
-    fetch('/api/budgets/' + this.state.budgetId,{
-        body: JSON.stringify({
-          userId: this.state.user.user.id,
-          name: this.state.name,
-          amount: this.state.amount
-        }),
-        method: 'PUT',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
-        }
-      })  
-      .then(this.handleCloseEditBudgetForm)
-      .then(this.getBudgets)
-      .catch(error => console.error({ Error: error }));
-  }
+  // handleEditBudgetSubmit = () => {
+  //   fetch('/api/budgets/' + this.state.budgetId,{
+  //       body: JSON.stringify({
+  //         userId: this.state.user.user.id,
+  //         name: this.state.name,
+  //         amount: this.state.amount
+  //       }),
+  //       method: 'PUT',
+  //       headers: {
+  //         'Accept': 'application/json, text/plain, */*',
+  //         'Content-Type': 'application/json'
+  //       }
+  //     })  
+  //     .then(this.handleCloseEditBudgetForm)
+  //     .then(this.getBudgets)
+  //     .catch(error => console.error({ Error: error }));
+  // }
 
 
 
   
   render() {
-    const { user } = this.props.auth;
-    // console.log(this.state.user.user.id)
-    // console.log(this.state.budgets)
 
-    const budgetAmounts = []
-    const budgetNames = []
-    this.state.budgets.map(function({amount}){
-      return budgetAmounts.push(amount)
-    })
-    this.state.budgets.map(function({name}){
-      return budgetNames.push(name)
-    })
-    // console.log(budgetNames)
-    const addBudgets = array => array.reduce((a, b) => a + b, 0);
-    var totalBudget = addBudgets(budgetAmounts);
-    // console.log(totalBudget)
-
-    // console.log(Math.max(...budgetAmounts))
-
-    //pie chart
-    const chart = {
-      labels: budgetNames,
-      datasets: [
-        {
-          label: "Budget",
-          backgroundColor: [
-            "rgba(70,171,158,1)",
-            "#f8b195",
-            "#be8abf",
-            "#d45d79",
-            "#a0ffe6",
-            "#f6d186",
-            "#6886c5",
-            "#616f39",
-            "#b0e0a8",
-            "#385170",
-            "#ef6c57",
-            "#cb9b42"
-          ],
-          borderColor: "rgba(27,121,106,1)",
-          borderWidth:2,
-          data: budgetAmounts
-        }
-      ]
-    }
-
-
+    const { auth } = this.props.auth;
+    const {category} = this.props.location.state;
+    console.log(category)
+    console.log(this.props.auth.user)
+    
     return (
-      <div id="budgets-component-upmost-parent-container">
-        <div className="category-container">
+      <div id="category-main-container">
+        <h3 className="category-name">{category.name}</h3>
+        <h5 className="category-description">{category.description}</h5>
+        {/* <div className="category-container">
             <Link to="/dashboard" className="btn waves-effect waves-light hoverable" id="dashboard-back-button">Back To Dashboard</Link>
             <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="accounts-log-out-button">
               Logout
@@ -278,42 +238,14 @@ class Budgets extends Component {
         { this.state.budgets.length > 0 ?
         <div className="budget-pie-container">
           <h4 className="chart-title">Here's Your Budget Distribution</h4>
-          <Doughnut
-            data={chart}
-            options={{
-              title:{
-                display:false,
-                text:'30 Day Spending Budget',
-                fontSize:28
-              },
-              legend:{
-                display:true,
-                position:'top',
-                padding:30,
-                labels: {
-                  fontSize:18
-                },
-              },
-              tooltips:{
-                enabled:true,
-                backgroundColor:'#2f7a6a',
-                bodyFontSize:16
-              },
-              cutoutPercentage:45,
-              circumference:2*Math.PI,
-              animation:{
-              animateScale:true
-              }	
-            }} 
-          />
         </div>
-        :null }
-      </div>
+        :null } */}
+      </div> 
     );
   }
 }
 
-Budgets.propTypes = {
+CategoryDashboard.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
@@ -325,4 +257,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { logoutUser }
-)(Budgets);
+)(CategoryDashboard);
