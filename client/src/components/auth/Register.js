@@ -13,6 +13,7 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
+      categoryId: "",
       password: "",
       password2: "",
       errors: {}
@@ -45,6 +46,7 @@ class Register extends Component {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
+      categoryId: this.state.categoryId,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -92,6 +94,26 @@ class Register extends Component {
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">{errors.email}</span>
+              </div>
+              <div class="input-field col s12">
+                <select class="browser-default" 
+                  onChange={this.onChange}
+                  value={this.state.categoryId}
+                  error={errors.name}
+                  id="categoryId"
+                  type="text">
+                  <option value="" disabled selected>What service can you offer others?</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="Housekeeping">Housekeeping</option>
+                  <option value="Gardening">Gardening</option>
+                  <option value="Pet Care">Pet Care</option>
+                  <option value="Transportation">Transportation</option>
+                  <option value="Child Care">Child Care</option>
+                  <option value="Tutoring">Tutoring</option>
+                  <option value="Translation">Translation</option>
+                  <option value="Electrician">Electrician</option>
+                  <option value="Handyman">Handyman</option>
+                </select>
               </div>
               <div className="input-field col s12">
                 <input

@@ -16,8 +16,8 @@ const UserSchema = new Schema({
     required: true
   },
   categoryId: {
-    type: Schema.Types.ObjectId, 
-    ref: "categories"
+    type: String, 
+    required: true
   },
   date: {
     type: Date,
