@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/electrumlogo.png";
+import logo from "../../img/chronoslogo.png";
 
 class Navbar extends Component {
   render() {

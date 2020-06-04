@@ -11,10 +11,6 @@ const app = express();
 
 const port = process.env.PORT || 5000 // process.env.port is Heroku's port if you choose to deploy the app there
 
-
-
-
-
 // DB Config
 const db = require("./config/keys").mongoURI;
 

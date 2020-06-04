@@ -25,7 +25,7 @@ router.post('/create', async (req, res) => {
     .catch(err => console.log(err)); // Mongo Error
 })
 
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
     Category.find()
         .then(categories => res.json(categories))
         .catch(err => console.log(err));
