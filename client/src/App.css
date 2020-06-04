@@ -291,6 +291,7 @@ main {
 .category-description {
     color: rgb(101, 101, 101);
     font-size: 22px;
+    margin-bottom: 1em;
 }
 
 .no-users-message-container {
@@ -299,30 +300,35 @@ main {
     color: rgb(101, 101, 101);
 }
 
+.category-users-container {
+    text-align: center;
+}
+
 .user-card {
-    border-top: 2px solid rgba(70,171,158,1);
-    height: 250px;
-    margin-top: 30px;
-    padding-top: 10px;
+    border: 2px solid rgba(70,171,158,1);
+    background: white;
+    vertical-align: top;
+    border-radius: 15px;
+    padding-bottom: 5px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .user-card-image {
     display: inline-block;
-    width: 32%;
-    height: 100%;
+    vertical-align: top;
 }
 
 .user-card-image img {
     border-radius: 50%;
     margin-top: 5%;
-    margin-left: 20%;
 }
 
 .user-card-content {
     display: inline-block;
-    width: 65%;
-    height: 100%;
     padding-top: 1%;
+    text-align: left;
+    margin-left: 2%;
 }
 
 .user-card-content h5 {
