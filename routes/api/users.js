@@ -97,5 +97,12 @@ router.post("/login", (req, res) => {
     });
 });
 
+//route to get users within a category:
+router.get('/:categoryId', (req, res) => {
+  User.find({categoryId: req.params.categoryId})
+      .then(users => res.json(users))
+      .catch(err => console.log(err));
+})
+
 
 module.exports = router;

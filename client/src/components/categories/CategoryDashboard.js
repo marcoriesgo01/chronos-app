@@ -8,20 +8,24 @@ import { logoutUser } from "../../actions/authActions";
 
 class CategoryDashboard extends Component {
 
-  // state = {
-  //   user: this.props.auth,
-  //   budgets: [],
-  //   budgetId: "",
-  //   name: "",
-  //   amount: "",
-  //   addBudget: false,
-  //   editBudget: false
+  state = {
+    categorySelected: [],
+    categoryUsers: []
+  }
 
-  // }
+  componentDidMount() {
+    const {category} = this.props.location.state;
+    this.setState({categorySelected: category});
+    this.getCategoryUsers();
+  }
 
-  // componentDidMount() {
-  //   this.getBudgets()
-  // }
+  getCategoryUsers = () =>  {
+    const {category} = this.props.location.state;
+    fetch('/api/users/' + category.name)
+    .then(res => res.json())
+    .then(jsonedUsers => this.setState({categoryUsers: jsonedUsers}))
+    .catch( error => console.error(error))
+  }
 
   // handleChange = event => {
   //   this.setState({ [event.target.id]: event.target.value });
@@ -137,13 +141,22 @@ class CategoryDashboard extends Component {
 
     const { auth } = this.props.auth;
     const {category} = this.props.location.state;
-    console.log(category)
-    console.log(this.props.auth.user)
+    // console.log(category)
+    // console.log(this.props.auth.user)
+    console.log(this.state.categorySelected.name)
+    console.log(this.state.categoryUsers)
     
     return (
       <div id="category-main-container">
-        <h3 className="category-name">{category.name}</h3>
-        <h5 className="category-description">{category.description}</h5>
+        <div>
+          <h3 className="category-name">{category.name}</h3>
+          <h5 className="category-description">{category.description}</h5>
+        </div>
+        { this.state.categoryUsers.length === 0 ?
+        <div className="no-users-message-container">
+          <h5 className="no-users-message-text">There are currently no users in the {category.name} category, {this.props.auth.user.name.split(" ")[0]}.</h5>
+        </div>
+        :null }
         {/* <div className="category-container">
             <Link to="/dashboard" className="btn waves-effect waves-light hoverable" id="dashboard-back-button">Back To Dashboard</Link>
             <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="accounts-log-out-button">
