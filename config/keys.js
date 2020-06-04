@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb+srv://mriesgo:electrum-database-lock@cluster0-ozsip.mongodb.net/test?retryWrites=true&w=majority",
+    mongoURI: "mongodb+srv://mriesgo:Pacama2001@cluster0-vapr6.mongodb.net/<dbname>?retryWrites=true&w=majority",
     secretOrKey: "secret"
 };

@@ -15,10 +15,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
-import Expenses from "./components/categories/Expenses";
 import Budgets from "./components/categories/Budgets";
-import Bills from "./components/categories/Bills";
-import Investments from "./components/categories/Investments";
 
 
 // Check for token to keep user logged in
@@ -53,10 +50,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/expenses" component={Expenses} />
               <PrivateRoute exact path="/budgets" component={Budgets} />
-              <PrivateRoute exact path="/bills" component={Bills} />
-              <PrivateRoute exact path="/investments" component={Investments} />
             </Switch>
           </div>
         </Router>

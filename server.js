@@ -5,15 +5,11 @@ const passport = require("passport");
 const path = require('path')
 
 const users = require("./routes/api/users");
-const plaid = require("./routes/api/plaid");
-const expenses = require("./routes/api/expenses");
-const budgets = require("./routes/api/budgets");
-const bills = require("./routes/api/bills");
-const investments = require("./routes/api/investments");
+const categories = require("./routes/api/categories");
 
 const app = express();
 
-const port = process.env.PORT // process.env.port is Heroku's port if you choose to deploy the app there
+const port = process.env.PORT || 5000 // process.env.port is Heroku's port if you choose to deploy the app there
 
 
 
@@ -50,12 +46,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-app.use("/api/plaid", plaid);
-app.use("/api/expenses", expenses);
-app.use("/api/budgets", budgets);
-app.use("/api/bills", bills);
-app.use("/api/investments", investments);
-
+app.use("/api/categories", categories);
 
 //Server static assts if in production:
 if (process.env.NODE_ENV === 'production') { 

@@ -15,6 +15,10 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  categoryId: {
+    type: Schema.Types.ObjectId, 
+    ref: "categories"
+  },
   date: {
     type: Date,
     default: Date.now

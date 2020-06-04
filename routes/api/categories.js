@@ -2,50 +2,50 @@ const express = require("express");
 const router = express.Router();
 
 
-// Get Budget model
-const Budget = require("../../models/Budget");
+// Get Category model
+const Category = require("../../models/Category");
 
 router.post('/create', async (req, res) => {
-    Budget.findOne({
+    Category.findOne({
         category: req.body.name
     })
     .then(budget => {
         if (budget) {
-            res.json("Budget category already exists")
+            res.json("Category category already exists")
         } else {
-            const newBudget = new Budget({
-                userId: req.body.userId,
+            const newCategory = new Category({
                 name: req.body.name,
-                amount: req.body.amount
+                description: req.body.description,
+                image: req.body.image
         
             })
-            newBudget.save().then(budget => res.json(budget))
+            newCategory.save().then(budget => res.json(budget))
         }
     })
     .catch(err => console.log(err)); // Mongo Error
 })
 
 router.get('/:id', (req, res) => {
-    Budget.find({ userId: req.params.id })
-        .then(budgets => res.json(budgets))
+    Category.find()
+        .then(categories => res.json(categories))
         .catch(err => console.log(err));
 })
 
 router.delete('/:id', (req, res) => {
-    Budget.findByIdAndRemove(req.params.id, (err, deletedBudget) => {
+    Category.findByIdAndRemove(req.params.id, (err, deletedCategory) => {
       if (err) {
         res.status(400).json({ error: err.message })
       }
-      res.status(200).json(deletedBudget)
+      res.status(200).json(deletedCategory)
     })
 })
 
 router.put('/:id', (req, res) => {
-    Budget.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedBudget) => {
+    Category.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedCategory) => {
       if (err) {
         res.status(400).json({ error: err.message })
       }
-      res.status(200).json(updatedBudget)
+      res.status(200).json(updatedCategory)
     })
 })
 
