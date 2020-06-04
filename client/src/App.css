@@ -1,0 +1,1057 @@
+@font-face {
+    font-family: 'Railway Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Railway Regular'), url('orkney-regular.woff') format('woff');
+}
+
+body {
+    font-family: 'Railway Regular';
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+}
+
+button {
+    font-family: 'Railway Regular';
+}
+
+hr {
+    opacity: 0.5;
+    border-top: 1px solid rgba(27,121,106,1);
+}
+
+.last-form-field {
+    margin-bottom: 30px;
+}
+
+.App {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+}
+
+a {
+    color: rgba(27,121,106,1);
+}
+
+.navbar-fixed {
+    background: linear-gradient(307deg, rgba(70,171,158,1) 0%, rgba(27,121,106,1) 100%);
+    -webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 4px 6px -6px #999;
+    box-shadow: 0 6px 6px -4px rgb(135, 135, 135);
+}
+
+.landing-left-container {
+    text-align: center;
+    width: 35%;
+    min-height: 100vh;
+    display: inline-block;
+    background: #f2f2f2;
+}
+
+.landing-right-container {
+    width: 65%;
+    min-height: 100vh;
+    float: right;
+    background: url(img/landing.png);
+    background-size: 100%;
+    background-repeat: inherit;
+}
+
+#landing-image {
+    height: 100vh;
+    max-width: 100%;
+}
+
+#welcome-text {
+    margin-top: 5em;
+    margin-bottom: 3em;
+    line-height: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.register-title {
+    margin-top: 60px;
+}
+
+.link-plaid-button {
+    margin-bottom: 20px;
+    font-family: "Railway Regular";
+}
+
+
+#register-button {
+    width: 180px;
+    font-size: 18px;
+    height: 54px;
+    display: inline-block;
+    margin-bottom: 1em;
+    
+}
+
+#log-in-button {
+    width: 180px;
+    background: none;
+    border: 2px solid rgba(27,121,106,1);
+    color: rgba(27,121,106,1);
+    font-size: 18px;
+    height: 54px;
+    display: inline-block;
+}
+
+.main-btn {
+    width: 185px;
+    letter-spacing: 1.5px;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn {
+    border-radius: 30px;
+    text-transform: capitalize;
+    background: linear-gradient(307deg, rgba(70,171,158,1) 0%, rgba(27,121,106,1) 100%);
+}
+
+.hey-there-user-dashboard {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#dashboard-main-accounts-container {
+    margin-bottom: 50px;
+}
+
+
+#accounts-log-out-button {
+    margin-top: 20px;
+    float: right;
+    height: 37px;
+    width: 110px;
+    background: white;
+    border: 1px solid red;
+    color: red;
+}
+
+#accounts-log-out-button:hover {
+    text-decoration: underline;
+}
+
+#dashboard-back-button {
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 37px;
+    width: 190px;
+    background: white;
+    border: 1px solid rgba(27,121,106,1);
+    color: rgba(27,121,106,1);
+}
+
+#dashboard-back-button:hover {
+    text-decoration: underline;
+}
+
+#budget-form-button {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 37px;
+    width: 100px;
+    background: white;
+    border: 1px solid rgba(27,121,106,1);
+    color: rgba(27,121,106,1);
+    font-family: "Railway Regular";
+    box-shadow: 0 0 9px -2px rgba(0, 0, 0, 0.5);
+}
+
+#budget-form-button:hover {
+    text-decoration: underline;
+    box-shadow: 0 012px -4px rgba(0, 0, 0, 0.8);
+}
+
+#budget-form-cancel-button {
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 37px;
+    width: 100px;
+    background: white;
+    border: 1px solid rgb(101, 101, 101);
+    color: rgb(101, 101, 101);
+    font-family: "Railway Regular";
+    box-shadow: 0 0 9px -2px rgba(0, 0, 0, 0.5);
+}
+
+#budget-form-cancel-button:hover {
+    text-decoration: underline;
+    box-shadow: 0 012px -4px rgba(0, 0, 0, 0.8);
+}
+
+.category-container {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+@keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-10px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+}
+
+.categories-container {
+    display: inline-block;
+    text-align: center;
+}
+
+.card{
+    width: 240px;
+    height: 205px !important;
+    display: inline-block;
+    border-radius: 15px;
+    border: 2px solid rgba(27,121,106,1);
+    color: black;
+    margin-left: 2em;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    box-shadow: 0 0 21px -4px rgba(0, 0, 0, 0.8);
+}
+
+.card-image {
+    margin-top: 15px;
+    height: 133px;
+    width: 138px;
+    margin-left: 20%;
+    margin-bottom: 0;
+}
+
+.card-content {
+    padding-top: 0px !important;
+    text-align: left;
+}
+
+.card-image img {
+    height: 100%;
+    width: 100%;
+}
+
+#trash-button {
+    background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
+}
+
+.container {
+    width: 80%;
+}
+
+#linked-accounts-header {
+    margin-top: 1em;
+}
+
+.category-introduction {
+    margin-top: 25px;
+    font-size: 28px;
+}
+
+.category-container {
+    margin-bottom: 2em;
+}
+
+
+.budget-list-container {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    min-height: 60vh;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.budget-pie-container {
+    width: 50%;
+    float: right;
+    text-align: center;
+    min-height: 60vh;
+}
+
+.budget-list-card {
+    border-radius: 20px;
+    height: 80px;
+    border: 1px solid rgba(27,121,106,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: white;
+    min-width: 350px;
+}
+
+.budget-list-card h4 {
+    font-size: 28px;
+}
+
+.budget-name {
+    float: left;
+    margin-left: 25px;
+    font-size: 22px;
+    padding-top: 14px;
+}
+
+.budget-info-container {
+    float: right;
+}
+
+
+.budget-amount {
+    display: inline-block;
+    padding-top: 14px;
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+.total-budget-list-card {
+    border-radius: 20px;
+    height: 80px;
+    border: 2px solid rgba(27,121,106,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: white;
+    min-width: 350px;
+    margin-top: 2em;
+}
+
+
+.total-budget-amount {
+    display: inline-block;
+    padding-top: 12px;
+    font-size: 22px;
+    color: rgba(27,121,106,1);
+    font-weight: 500;
+    font-size: 26px;
+    margin-right: 25px;
+}
+
+.total-budget-name {
+    float: left;
+    margin-left: 25px;
+    font-size: 24px;
+    padding-top: 12px;
+}
+
+.total-bill-name {
+    float: left;
+    margin-left: 25px;
+    font-size: 22px;
+    padding-top: 14px;
+}
+
+.total-bill-amount {
+    display: inline-block;
+    padding-top: 12px;
+    font-size: 22px;
+    color: rgba(27,121,106,1);
+    font-weight: 500;
+    font-size: 26px;
+    margin-right: 25px;
+}
+
+.no-budget-warning {
+    text-align: center;
+    color: rgb(57, 57, 57);
+}
+
+.no-budget-warning h5 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+#trash-budget-button  {
+    background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-right: 10px;
+}
+
+#edit-budget-button  {
+    background: linear-gradient(307deg, rgba(70,171,158,1) 0%, rgba(27,121,106,1) 100%);
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-right: 10px;
+}
+
+.chart-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.bills-categories-main-container {
+    text-align: center;
+}
+
+.bill-category-container{
+    width: 28%;
+    display: inline-grid;
+    border-radius: 15px;
+    background: white;
+    border: 2px solid rgba(27,121,106,1);
+    color: black;
+    margin-left: 2em;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    min-width: 280px;
+    margin-top: 20px;
+    min-height: 350px;
+}
+
+
+.bill-category-container:hover {
+    box-shadow: 0 0 21px -4px rgba(0, 0, 0, 0.8);
+}
+
+.bill-category-name-container {
+    height: 60px;
+    padding-top: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 4px 6px -6px #999;
+    box-shadow: 0 6px 6px -4px rgb(135, 135, 135); 
+}
+
+.bill-category-name {
+    font-size: 24px;
+    padding-left: 10px;
+    margin-left: 45px;
+    margin-top: 0;
+    color: white;
+    padding-top: 10px;
+    
+}
+
+#add-home-bill-button  {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(91,21,55,1);
+}
+
+#add-transportation-bill-button  {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(0,168,232,1);
+}
+
+#add-subscription-bill-button  {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgb(194, 168, 74);
+}
+
+.add-bill-button-container {
+    display: block;
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.no-bill-warning {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.no-bill-warning h6 {
+    padding-top: 0;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+#home {
+    border: 2px solid rgba(91,21,55,1);
+}
+#subscriptions {
+    border: 2px solid rgb(194, 168, 74);
+}
+
+
+#transportation {
+    border: 2px solid rgba(0,168,232,1);
+}
+
+#home-bills {
+    background: rgba(91,21,55,1);
+}
+
+#transportation-bills {
+    background: rgba(0,168,232,1);
+}
+
+#subscription-bills {
+    background: rgb(194, 168, 74);
+}
+
+.bill-list-container-home {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bill-list-card-home {
+    border-radius: 20px;
+    height: 80px;
+    border: 1px solid rgba(91,21,55,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    position: relative;
+}
+
+.bill-list-card-transportation {
+    border-radius: 20px;
+    height: 80px;
+    border: 1px solid rgba(0,168,232,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    position: relative;
+}
+
+.bill-list-card-subscriptions {
+    border-radius: 20px;
+    height: 80px;
+    border: 1px solid rgb(194, 168, 74);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    position: relative;
+}
+
+.bill-list-item-top-container {
+    display: block;
+}
+
+.bill-name {
+    margin-left: 15px;
+    font-size: 18px;
+    margin-top: 15px;
+    display: inline-block;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+
+#trash-bill-button  {
+    background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+#edit-bill-button  {
+    background: linear-gradient(307deg, rgba(70,171,158,1) 0%, rgba(27,121,106,1) 100%);
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.bill-info-container {
+    width: 100%;
+}
+
+
+
+.bill-due {
+    float: left;
+    margin-left: 15px;
+    font-size: 16px;
+    margin-top: 16px;
+    padding-bottom: 10px;
+
+}
+
+
+.bill-amount {
+    font-size: 18px;
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
+
+}
+
+.total-home-bill-list-card {
+    border-radius: 20px;
+    height: 60px;
+    border: 2px solid rgba(91,21,55,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.total-transportation-bill-list-card {
+    border-radius: 20px;
+    height: 60px;
+    border: 2px solid rgba(0,168,232,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.total-subscriptions-bill-list-card {
+    border-radius: 20px;
+    height: 60px;
+    border: 2px solid rgb(194, 168, 74);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.total-bill-name{
+    font-size: 15px;
+    padding-top: 20px;
+    margin-top: 0;
+    padding-left: 12px;
+    margin-left: 0;
+}
+
+.total-bill-amount{
+    float: right;
+    font-size: 18px;
+    margin-top: 0;
+    padding-top: 18px;
+    margin-right: 9px;
+}
+
+.bills-summary-container {  
+    border-radius: 10px;
+    margin-left: 8%;
+    margin-right: 6%;
+    border: 1px solid rgba(27,121,106,1);
+    box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.5);
+    background: white;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.bills-summary-intro {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 3px;
+}
+
+.electrum-expert-recommendation {
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.bills-analysis-container {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 80px;
+    align-items: center;
+    margin-left: 10%;   
+}
+
+.bill-category-icon {
+    color: white;
+    margin-left: 15px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.bill-category-icon-container {
+    float: left;
+}
+
+#hr-transportation {
+    border-top: 1px solid rgba(0,168,232,1);
+}
+
+#hr-home {
+    border-top: 1px solid rgba(91,21,55,1);
+}
+
+#hr-subscriptions {
+    border-top: 1px solid rgb(194, 168, 74);
+}
+
+
+.expense-list-item-left-container {
+    float: left;
+    padding-left: 15px;
+}
+
+.expense-name {
+    font-size: 18px;
+}
+
+.expense-date {
+    font-size: 16px;
+    margin-top: 0;
+
+}
+
+.expense-list-item-right-container {
+    float: right;
+}
+
+.expense-amount {
+    padding-top: 13px;
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+.expense-list-container-home {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+}
+
+.total-expense-amount {
+    padding-top: 12px;
+    font-size: 22px;
+    color: rgba(27,121,106,1);
+    font-weight: 500;
+    font-size: 19px;
+    float: right;
+    font-size: 18px;
+    margin-top: 0;
+    padding-top: 20px;
+    margin-right: 9px;
+}
+
+
+.expense-category-container{
+    width: 28%;
+    display: inline-grid;
+    border-radius: 15px;
+    background: white;
+    border: 2px solid rgba(27,121,106,1);
+    color: black;
+    margin-left: 2%;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    min-width: 333px;
+    margin-top: 20px;
+    min-height: 350px;
+}
+
+#food {
+    border: 2px solid rgba(91,21,55,1);
+}
+
+#hr-food {
+    border-top: 1px solid rgba(91,21,55,1);
+}
+
+#shopping {
+    border: 2px solid rgba(0,168,232,1);
+}
+
+#hr-shopping {
+    border-top: 1px solid rgba(0,168,232,1);
+}
+
+#payments {
+    border: 2px solid rgb(194, 168, 74);
+}
+
+#hr-payments {
+    border-top: 1px solid rgb(194, 168, 74);
+}
+
+#travel {
+    border: 2px solid rgba(50,172,109,1);
+}
+
+#hr-travel {
+    border-top: 1px solid rgba(50,172,109,1);
+}
+
+#transfers {
+    border: 2px solid rgba(242,116,5,1);
+}
+
+#hr-transfers {
+    border-top: 1px solid rgba(242,116,5,1);
+}
+
+#recreation {
+    border: 2px solid rgba(116,106,255,1);
+}
+
+#hr-recreation {
+    border-top: 1px solid rgba(116,106,255,1);
+}
+
+
+.expense-category-container:hover {
+    box-shadow: 0 0 21px -4px rgba(0, 0, 0, 0.8);
+}
+
+.total-expense-name {
+    float: left;
+    font-size: 19px;
+    padding-top: 19px;
+    margin-top: 0;
+    padding-left: 12px;
+    margin-left: 0;
+}
+
+.expense-categories-parent-container {
+    text-align: center;
+}
+
+#shopping-expense-item-card {
+    border: 1px solid rgba(0,168,232,1);
+}
+
+#payments-expense-item-card {
+    border: 1px solid rgb(194, 168, 74);
+}
+
+#travel-expense-item-card {
+    border: 1px solid rgba(50,172,109,1);
+}
+
+#transfer-expense-item-card {
+    border: 1px solid rgba(242,116,5,1);
+}
+
+#recreation-expense-item-card {
+    border: 1px solid rgba(116,106,255,1);
+}
+
+#shopping-total-card {
+    border: 2px solid rgba(0,168,232,1);
+}
+
+#payments-total-card {
+    border: 2px solid rgb(194, 168, 74);
+}
+
+#travel-total-card {
+    border: 2px solid rgba(50,172,109,1);
+}
+
+#transfer-total-card {
+    border: 2px solid rgba(242,116,5,1);
+}
+
+#recreation-total-card {
+    border: 2px solid rgba(116,106,255,1);
+}
+
+#food-title {
+    background: rgba(91,21,55,1);
+}
+
+#shopping-title {
+    background: rgba(0,168,232,1);
+}
+
+#payments-title {
+    background: rgb(194, 168, 74);
+}
+
+#travel-title {
+    background: rgba(50,172,109,1);
+}
+
+#transfer-title {
+    background: rgba(242,116,5,1);
+}
+
+#recreation-title {
+    background: rgba(116,106,255,1);
+}
+
+.expenses-introduction {
+    font-size: 28px;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.expenses-chart-introduction {
+    font-size: 28px;
+    text-align: left;
+    padding-left: 5%;
+    margin-bottom: 40px;
+}
+
+.expenses-chart-container {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+
+.banking-analysis-container {
+    background: white;
+    height: auto;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    margin-top: 0;
+    border: 2px solid rgba(27,121,106,1);
+    border-radius: 20px;
+}
+
+.banking-analysis-summary {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.category-introduction-small-text {
+    margin-top: 20px;
+}
+
+#stocks-main-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.stocks-list-container {
+    text-align: center;
+}
+
+.stock-list-card {
+    background: white;
+    border: 2px solid rgba(27,121,106,1);
+    border-radius: 20px;
+    width: 25%;
+    min-width: 330px;
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4%;
+}
+
+.stocks-button-container {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    padding-right: 5px;
+    
+}
+
+.stock-name {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    font-size: 34px;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+
+.stock-info-main-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.stock-info-div {
+    text-align: none;
+    padding-left: 10px;
+    padding-right: 30px;
+    
+}
+
+.stock-info-title {
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+    padding-left: 7px;
+    font-size: 18px;
+}
+
+.stock-info-value {
+    width: 30%;
+    font-size: 20px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 0px;
+}
+
+#stocks-hr {
+    width: 92%;
+}
+
+.stock-price-warning {
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    margin-top: 40px;
+}
+
+.stocks-chart-parent {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.stocks-chart-container {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.stock-assets-analysis-container {
+    background: white;
+    border: 2px solid rgba(27,121,106,1);
+    width: 84%;
+    margin-left: 8%;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.stock-assets-analysis-text {
+    font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    margin-top: -10px;
+    background: rgba(27,121,106,1);
+}
+
+.footer-container {
+    height: 50px;
+    padding-top: 7px;
+    padding-left: 5%;
+}
+
+#expenses-component-main-container {
+    margin-bottom: 70px;
+}
+
+#budgets-component-upmost-parent-container {
+    margin-bottom: 60px;
+}
