@@ -54,7 +54,7 @@ class Dashboard extends Component {
           <div className="categories-container">
           {this.state.categories.map( category => {
               return (
-                <Link to="/expenses">
+                <Link to={`/category/${category._id}`}>
                 <div className="card">
                     <div className="card-image">
                         <img src={category.image} alt="category"/>
