@@ -269,8 +269,23 @@ main {
     margin-right: 5%;
 }
 
-.category-name {
+#log-out-button-category {
+    float: right;
+    height: 40px !important;
+    width: 110px;
+    margin-top: 25px;
+    background: white;
+    border: 1px solid red;
+    color: red;
+    padding-top: 2px;
+}
 
+#log-out-button-category:hover {
+    text-decoration: underline;
+}
+
+.category-name {
+    display: inline-block;
 }
 
 .category-description {
@@ -282,4 +297,45 @@ main {
     text-align: center;
     margin-top: 10%;
     color: rgb(101, 101, 101);
+}
+
+.user-card {
+    border-top: 2px solid rgba(70,171,158,1);
+    height: 250px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.user-card-image {
+    display: inline-block;
+    width: 32%;
+    height: 100%;
+}
+
+.user-card-image img {
+    border-radius: 50%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.user-card-content {
+    display: inline-block;
+    width: 65%;
+    height: 100%;
+    padding-top: 1%;
+}
+
+.user-card-content h5 {
+    padding-top: 3px;
+}
+
+#cancel-register-button {
+    width: 180px;
+    background: none;
+    border: 2px solid rgba(20,112,147,1);
+    color: rgba(20,112,147,1);
+    font-size: 18px;
+    height: 54px;
+    display: inline-block;
+    margin-bottom: 3em;
 }

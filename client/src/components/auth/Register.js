@@ -12,8 +12,11 @@ class Register extends Component {
     super();
     this.state = {
       name: "",
+      image: "",
       email: "",
+      phone: "",
       categoryId: "",
+      expertiseYears: "",
       password: "",
       password2: "",
       errors: {}
@@ -45,8 +48,11 @@ class Register extends Component {
     e.preventDefault();
     const newUser = {
       name: this.state.name,
+      image: this.state.image,
       email: this.state.email,
+      phone: this.state.phone,
       categoryId: this.state.categoryId,
+      expertiseYears: this.state.expertiseYears,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -84,6 +90,20 @@ class Register extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  value={this.state.image}
+                  error={errors.image}
+                  id="image"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.image
+                  })}
+                />
+                <label htmlFor="name">Image URL</label>
+                <span className="red-text">{errors.name}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
@@ -94,6 +114,20 @@ class Register extends Component {
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.phone}
+                  error={errors.phone}
+                  id="phone"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.phone
+                  })}
+                />
+                <label htmlFor="name">Phone Number</label>
+                <span className="red-text">{errors.phone}</span>
               </div>
               <div class="input-field col s12">
                 <select class="browser-default" 
@@ -114,6 +148,20 @@ class Register extends Component {
                   <option value="Electrician">Electrician</option>
                   <option value="Handyman">Handyman</option>
                 </select>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.expertiseYears}
+                  error={errors.expertiseYears}
+                  id="expertiseYears"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.expertiseYears
+                  })}
+                />
+                <label htmlFor="name">Years of Expertise</label>
+                <span className="red-text">{errors.expertiseYears}</span>
               </div>
               <div className="input-field col s12">
                 <input
@@ -148,7 +196,7 @@ class Register extends Component {
                   Sign up
                 </button>
                 <br />
-                <Link to="/" className="btn btn-large waves-effect waves-light hoverable" id="log-in-button">Cancel</Link>
+                <Link to="/" className="btn btn-large waves-effect waves-light hoverable" id="cancel-register-button">Cancel</Link>
               </div>
             </form>
           </div>

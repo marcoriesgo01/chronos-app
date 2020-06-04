@@ -150,11 +150,33 @@ class CategoryDashboard extends Component {
       <div id="category-main-container">
         <div>
           <h3 className="category-name">{category.name}</h3>
+          <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="log-out-button-category">
+            Logout
+          </button>
           <h5 className="category-description">{category.description}</h5>
         </div>
         { this.state.categoryUsers.length === 0 ?
         <div className="no-users-message-container">
           <h5 className="no-users-message-text">There are currently no users in the {category.name} category, {this.props.auth.user.name.split(" ")[0]}.</h5>
+        </div>
+        :null }
+        { this.state.categoryUsers.length > 0 ?
+        <div className="category-users-container">
+          {this.state.categoryUsers.map( user => {
+              return (
+                <div className="user-card">
+                    <div className="user-card-image">
+                        <img src={user.image} alt="category"/> 
+                    </div>
+                    <div className="user-card-content">
+                        <h4>{user.name}</h4>
+                        <h5>Years of Experience: {user.expertiseYears}</h5>
+                        <h5>Email: {user.email}</h5>
+                        <h5>Phone: {user.phone}</h5>
+                    </div>
+                </div>
+              )
+            })}
         </div>
         :null }
         {/* <div className="category-container">

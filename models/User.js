@@ -7,7 +7,15 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  image: {
+    type: String,
+    required: true
+  },
   email: {
+    type: String,
+    required: true
+  },
+  phone: {
     type: String,
     required: true
   },
@@ -17,6 +25,10 @@ const UserSchema = new Schema({
   },
   categoryId: {
     type: String, 
+    required: true
+  },
+  expertiseYears: {
+    type: Number,
     required: true
   },
   date: {
