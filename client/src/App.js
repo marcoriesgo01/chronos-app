@@ -17,6 +17,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 import CategoryDashboard from "./components/categories/CategoryDashboard";
 
+import Profile from "./components/categories/Profile";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -51,6 +53,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/category/:categoryId" component={CategoryDashboard} />
+              <PrivateRoute exact path="/category/:categoryId/users/:userId" component={Profile} />
             </Switch>
           </div>
         </Router>

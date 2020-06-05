@@ -16,6 +16,8 @@ button {
     font-family: 'Railway Regular';
 }
 
+
+
 hr {
     opacity: 0.5;
     border-top: 1px solid rgba(20,112,147,1);
@@ -309,30 +311,37 @@ main {
     height: 80vh;
     overflow: scroll;
     margin-bottom: 3em;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .user-card {
-    border-bottom: 1px solid rgba(70,171,158,1);
-    border-top: 1px solid rgba(70,171,158,1);
+    border: 1px solid rgba(70,171,158,1);
+    margin-bottom: 25px;
+    border-radius: 10px;
     background: white;
     vertical-align: top;
-    border-radius: 5px;
     padding-bottom: 25px;
     padding-top: 5px;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
     padding-left: 15px;
+}
+
+.user-card:hover {
+    background: rgb(222, 222, 222);
 }
 
 .user-card-image {
     display: inline-block;
     vertical-align: top;
     min-width: 30%;
+    margin-top: 20px;
 }
 
 .user-card-image img {
     border-radius: 50%;
-    margin-top: 5%;
+    height: 150px;
+    width: 150px;
 }
 
 .user-card-content {
@@ -340,6 +349,7 @@ main {
     padding-top: 1%;
     text-align: left;
     min-width: 70%;
+    color: black;
 }
 
 .user-card-content h5 {
@@ -355,4 +365,81 @@ main {
     height: 54px;
     display: inline-block;
     margin-bottom: 3em;
+}
+
+.view-user-to-contact {
+    color: grey;
+    margin-top: 15px;
+}
+
+/* Profile */
+
+#dashboard-profile-back-button {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 190px;
+    border-radius: 12px;
+    margin-top: 24px;
+    padding-top: 2px;
+    background: white;
+    border: 1px solid rgba(20,112,147,1);
+    color: rgba(20,112,147,1);
+}
+
+#dashboard-profile-back-button:hover {
+    text-decoration: underline;
+}
+
+.profile-container {
+    width: 95%;
+    margin-top: 3%;
+    margin-left: 2.5%;
+    border-radius: 20px;
+    border: 1px solid rgba(20,112,147,1);
+    text-align: center;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
+    background: white;
+}
+
+.user-profile-info-container {
+    
+    
+
+}
+
+.user-profile-left-container {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    padding-top: 30px;
+    margin-right: 3%;
+
+}
+
+.user-profile-left-container img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border: 3px solid rgba(70,171,158,1);
+}
+
+.user-profile-right-container {
+    padding-left: 30px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding-top: 20px;
+    margin-left: 3%;
+}
+
+.user-profile-right-container h5 {
+    margin-bottom: 30px;
+}
+
+#profile-view-hr {
+    border-top: 1px solid rgba(70,171,158,1);
+    margin-top: 10px;
+    width: 90%;
+    margin-bottom: 30px;
 }
