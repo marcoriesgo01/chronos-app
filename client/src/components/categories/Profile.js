@@ -72,8 +72,26 @@ class CategoryDashboard extends Component {
                     <h5>Works in {category.name}</h5>
                     <h5>Years of Experience: {user.expertiseYears}</h5>
                     <h5>Expertise: {user.expertise}</h5>
-                    <h5><a href={`mailto:${user.email}`} id="email-link">Click to email {user.name.split(" ")[0]} at {user.email}</a></h5>
-                    <h5><a href={`tel:${user.phone}`}>Click to call {user.name.split(" ")[0]} at {user.phone}</a></h5>
+                    <h5>
+                      <a href={`mailto:${user.email}`}>
+                        <div id="profile-contact-icon">
+                          <i class="small material-icons">email</i>
+                        </div>
+                        <div id="profile-contact-icon-text">
+                          <h5>Email {user.name.split(" ")[0]} at {user.email}</h5>
+                        </div>
+                      </a>
+                    </h5>
+                    <h5>
+                      <a href={`tel:${user.phone}`}>
+                        <div id="profile-contact-icon">
+                          <i class="small material-icons">call</i>
+                        </div>
+                        <div id="profile-contact-icon-text">
+                          <h5>Call {user.name.split(" ")[0]} at {user.phone}</h5>
+                        </div>
+                      </a>
+                    </h5>
                 </div>
                 <hr id="profile-view-hr"/>
             </div>

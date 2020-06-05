@@ -486,3 +486,25 @@ main {
 #create-review-button:hover {
     text-decoration: underline;
 }
+
+#profile-contact-icon {
+    display: inline;
+    padding-top: 0px;
+
+}
+
+#profile-contact-icon-text {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+    padding-top: 4px;
+}
+
+#profile-contact-icon-text h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#contact-link {
+    margin-bottom: 25px;
+}
