@@ -554,3 +554,16 @@ main {
 .review-item-bottom-content h5 {
     font-size: 20px;
 }
+
+.review-item-bottom-left-content {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+}
+
+.review-item-bottom-right-content {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    vertical-align: top;
+}

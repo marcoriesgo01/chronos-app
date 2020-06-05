@@ -39,6 +39,20 @@ class CategoryDashboard extends Component {
   handleBack = () => {
     this.props.history.goBack()
   }
+
+  //delete a review if its written by you
+  deleteBudget = id => {
+    fetch('/api/reviews/' + id, {
+      method: 'DELETE'
+    }).then( res => {
+      const reviewsArr = this.state.userReviews.filter( review => {
+        return review.id !== id
+      })
+      this.setState({
+        userReviews: reviewsArr
+      })
+    }).then(this.getUserReviews())
+  }
   
   render() {
 
@@ -140,7 +154,12 @@ class CategoryDashboard extends Component {
                                 </div>
                               </div>
                               <div className="review-item-bottom-content">
-                                <h5>Comment: {review.comment}</h5>
+                                <div className="review-item-bottom-left-content">
+                                  <h5>Comment: {review.comment}</h5>
+                                </div>
+                                <div className="review-item-bottom-right-content">
+                                  <h5>Button</h5>
+                                </div>
                               </div>
                           </div>
                       </div>
