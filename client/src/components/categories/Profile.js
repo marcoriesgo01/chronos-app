@@ -72,17 +72,17 @@ class CategoryDashboard extends Component {
                     <h5>Works in {category.name}</h5>
                     <h5>Years of Experience: {user.expertiseYears}</h5>
                     <h5>Expertise: {user.expertise}</h5>
-                    <h5><a href={`mailto:${user.email}`} id="email-link">Email {user.name} at {user.email}</a></h5>
-                    <h5><a href={`tel:${user.phone}`}>Call {user.name} at {user.phone}</a></h5>
+                    <h5><a href={`mailto:${user.email}`} id="email-link">Click to email {user.name.split(" ")[0]} at {user.email}</a></h5>
+                    <h5><a href={`tel:${user.phone}`}>Click to call {user.name.split(" ")[0]} at {user.phone}</a></h5>
                 </div>
                 <hr id="profile-view-hr"/>
             </div>
             <div className="user-profile-messages-container">
               <div className="user-reviews-title-name-container">
-                <h4 id="message-board-title">User Reviews About {user.name.split(" ")[0]}</h4>
+                <h4 id="message-board-title">{user.name.split(" ")[0]}'s Reviews</h4>
               </div>
               <div className="user-reviews-title-button-container">
-                <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="post-message-button">
+                <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="create-review-button">
                   Post a Review
                 </button>
               </div>

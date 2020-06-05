@@ -6,6 +6,7 @@ const path = require('path')
 
 const users = require("./routes/api/users");
 const categories = require("./routes/api/categories");
+const reviews = require("./routes/api/reviews");
 
 const app = express();
 
@@ -43,6 +44,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/categories", categories);
+app.use("/api/reviews", reviews);
 
 //Server static assts if in production:
 if (process.env.NODE_ENV === 'production') { 

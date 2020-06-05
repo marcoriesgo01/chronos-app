@@ -396,6 +396,8 @@ main {
     text-decoration: underline;
 }
 
+
+
 .profile-container {
     width: 95%;
     margin-top: 3%;
@@ -458,6 +460,10 @@ main {
     margin-top: 0;
 }
 
+#message-board-title {
+    font-size: 30px;
+}
+
 .user-reviews-title-button-container {
     display: inline-block;
     width: 30%;
@@ -466,4 +472,17 @@ main {
     padding-bottom: 20px;
     margin-top: 0;
 
+}
+
+#create-review-button {
+    margin-right: 5px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    padding-top: 2px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#create-review-button:hover {
+    text-decoration: underline;
 }
