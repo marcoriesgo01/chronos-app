@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/authActions";
 import { get } from "http";
 
+import StarRatings from 'react-star-ratings';
+
 class CategoryDashboard extends Component {
 
   state = {
@@ -109,10 +111,33 @@ class CategoryDashboard extends Component {
                   Post a Review
                 </button>
               </div>
-              { this.state.userReviews.length >= 1 ?
+              { this.state.userReviews.length < 1 ?
                 <div className="no-user-reviews-container">
                   <h5 className="no-user-reviews-text-line-one">{user.name.split(" ")[0]} has no reviews yet.</h5>
                   <h5 className="no-user-reviews-text-line-two">Add a review to contribute to {user.name.split(" ")[0]}'s profile.</h5>
+                </div>
+              : null }
+              { this.state.userReviews.length > 0 ?
+                <div className="reviews-list-parent-container">
+                  {this.state.userReviews.map( review => {
+                    return (
+                      <div className="review-item">
+                          <div className="review-item-content">
+                              <h5>Author: {review.author}</h5>
+                              <h5>Rating:  
+                                <StarRatings
+                                rating={review.rating}
+                                starRatedColor="#46ab9e"
+                                numberOfStars={5}
+                                starDimension="30px"
+                                name='rating'
+                                />
+                              </h5>
+                              <h5>Comment:{review.comment}</h5>
+                          </div>
+                      </div>
+                    )
+                  })}
                 </div>
               : null }
             </div>

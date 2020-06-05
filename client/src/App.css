@@ -408,6 +408,8 @@ main {
     padding-top: 15px;
     box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
     background: white;
+    margin-bottom: 5em;
+    padding-bottom: 40px;
 }
 
 .user-profile-left-container {
@@ -509,10 +511,6 @@ main {
     margin-bottom: 25px;
 }
 
-.no-user-reviews-container {
-
-}
-
 .no-user-reviews-text-line-one {
     color: rgb(116, 116, 116);
     font-size: 20px;
@@ -523,4 +521,8 @@ main {
     font-size: 18px;
     margin-top: 30px;
     margin-bottom: 100px;
+}
+
+.review-item {
+    border: 1px solid blue;
 }
