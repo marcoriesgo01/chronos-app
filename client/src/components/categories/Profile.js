@@ -30,7 +30,6 @@ class CategoryDashboard extends Component {
     .then(jsonedReviews => this.setState({userReviews: jsonedReviews}))
     .catch( error => console.error(error))
   }
-
   // Logout
   onLogoutClick = e => {
     e.preventDefault();
@@ -48,10 +47,11 @@ class CategoryDashboard extends Component {
     const {user} = this.props.location.state;
     // console.log(category)
     // console.log(this.props.auth.user)
-    console.log(category)
-    console.log(user)
-    console.log(this.state.userProfile)
-    console.log(this.state.userReviews)
+    // console.log(category)
+    // console.log(user)
+    // console.log(this.state.userProfile)
+    // console.log(this.state.userReviews)
+    
     
     return (
       <div id="category-main-container">
@@ -123,17 +123,25 @@ class CategoryDashboard extends Component {
                     return (
                       <div className="review-item">
                           <div className="review-item-content">
-                              <h5>Author: {review.author}</h5>
-                              <h5>Rating:  
-                                <StarRatings
-                                rating={review.rating}
-                                starRatedColor="#46ab9e"
-                                numberOfStars={5}
-                                starDimension="30px"
-                                name='rating'
-                                />
-                              </h5>
-                              <h5>Comment:{review.comment}</h5>
+                              <div className="review-item-top-content">
+                                <div className="review-item-top-left-content">
+                                  <h5>Written by {review.authorName}</h5>
+                                </div>
+                                <div className="review-item-top-right-content">
+                                  <h5>  
+                                    <StarRatings
+                                      rating={review.rating}
+                                      starRatedColor="#46ab9e"
+                                      numberOfStars={5}
+                                      starDimension="25px"
+                                      name='rating'
+                                    />
+                                  </h5>
+                                </div>
+                              </div>
+                              <div className="review-item-bottom-content">
+                                <h5>Comment: {review.comment}</h5>
+                              </div>
                           </div>
                       </div>
                     )

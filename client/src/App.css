@@ -402,14 +402,14 @@ main {
     width: 95%;
     margin-top: 3%;
     margin-left: 2.5%;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid rgba(20,112,147,1);
     text-align: center;
     padding-top: 15px;
     box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
     background: white;
     margin-bottom: 5em;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .user-profile-left-container {
@@ -524,5 +524,33 @@ main {
 }
 
 .review-item {
-    border: 1px solid blue;
+    text-align: left;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-top: 1px solid rgb(135, 135, 135);
+}
+
+.review-item-top-left-content {
+    display: inline-block;
+    width: 60%;
+}
+
+.review-item-top-left-content h5{
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.review-item-top-right-content {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 0px;
+}
+
+.review-item-bottom-content h5 {
+    font-size: 20px;
 }
