@@ -17,6 +17,7 @@ class Register extends Component {
       phone: "",
       categoryId: "",
       expertiseYears: "",
+      expertise: "",
       password: "",
       password2: "",
       errors: {}
@@ -53,6 +54,7 @@ class Register extends Component {
       phone: this.state.phone,
       categoryId: this.state.categoryId,
       expertiseYears: this.state.expertiseYears,
+      expertise: this.state.expertise,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -136,7 +138,7 @@ class Register extends Component {
                   error={errors.name}
                   id="categoryId"
                   type="text">
-                  <option value="" disabled selected>What service can you offer others?</option>
+                  <option value="" disabled selected>What service can you offer other users?</option>
                   <option value="Plumbing">Plumbing</option>
                   <option value="Housekeeping">Housekeeping</option>
                   <option value="Gardening">Gardening</option>
@@ -162,6 +164,20 @@ class Register extends Component {
                 />
                 <label htmlFor="name">Years of Expertise</label>
                 <span className="red-text">{errors.expertiseYears}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.expertise}
+                  error={errors.expertise}
+                  id="expertise"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.expertise
+                  })}
+                />
+                <label htmlFor="name">Professional Expertise</label>
+                <span className="red-text">{errors.expertise}</span>
               </div>
               <div className="input-field col s12">
                 <input

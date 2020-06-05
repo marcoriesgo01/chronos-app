@@ -32,7 +32,8 @@ router.post("/register", (req, res) => {
           phone: req.body.phone,
           password: req.body.password,
           categoryId: req.body.categoryId,
-          expertiseYears: req.body.expertiseYears
+          expertiseYears: req.body.expertiseYears,
+          expertise: req.body.expertise
         });
   // Hash password before saving in database
         bcrypt.genSalt(10, (err, salt) => {

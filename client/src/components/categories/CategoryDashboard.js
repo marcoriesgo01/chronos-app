@@ -153,6 +153,8 @@ class CategoryDashboard extends Component {
           <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="log-out-button-category">
             Logout
           </button>
+          <br />
+          <Link to="/dashboard" className="btn waves-effect waves-light hoverable" id="dashboard-back-button">Back To Dashboard</Link>
           <h5 className="category-description">{category.description}</h5>
         </div>
         { this.state.categoryUsers.length === 0 ?
@@ -171,7 +173,8 @@ class CategoryDashboard extends Component {
                     <div className="user-card-content">
                         <h4>{user.name}</h4>
                         <h5>Years of Experience: {user.expertiseYears}</h5>
-                        <h5>Email: {user.email}</h5>
+                        <h5>Expertise: {user.expertise}</h5>
+                        <h5>Contact Email: <a href={`mailto:${user.email}`}>{user.email}</a></h5>
                         <h5>Phone: {user.phone}</h5>
                     </div>
                 </div>

@@ -31,6 +31,10 @@ const UserSchema = new Schema({
     type: Number,
     required: true
   },
+  expertise: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
