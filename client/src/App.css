@@ -403,14 +403,9 @@ main {
     border-radius: 20px;
     border: 1px solid rgba(20,112,147,1);
     text-align: center;
+    padding-top: 15px;
     box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
     background: white;
-}
-
-.user-profile-info-container {
-    
-    
-
 }
 
 .user-profile-left-container {
@@ -444,7 +439,31 @@ main {
 
 #profile-view-hr {
     border-top: 1px solid rgba(70,171,158,1);
-    margin-top: 10px;
+    margin-top: 20px;
     width: 90%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+/* Message Board */
+
+.user-profile-messages-container {
+    width: 100%;
+}
+
+.user-reviews-title-name-container {
+    display: inline-block;
+    width: 70%;
+    text-align: left;
+    padding-left: 60px;
+    margin-top: 0;
+}
+
+.user-reviews-title-button-container {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    padding-right: 60px;
+    padding-bottom: 20px;
+    margin-top: 0;
+
 }

@@ -78,7 +78,14 @@ class CategoryDashboard extends Component {
                 <hr id="profile-view-hr"/>
             </div>
             <div className="user-profile-messages-container">
-            
+              <div className="user-reviews-title-name-container">
+                <h4 id="message-board-title">User Reviews About {user.name.split(" ")[0]}</h4>
+              </div>
+              <div className="user-reviews-title-button-container">
+                <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="post-message-button">
+                  Post a Review
+                </button>
+              </div>
             </div>
         </div>
         :null }   
