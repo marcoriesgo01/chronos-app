@@ -297,7 +297,7 @@ main {
 .category-description {
     color: rgb(101, 101, 101);
     font-size: 22px;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .no-users-message-container {
@@ -311,8 +311,11 @@ main {
     height: 80vh;
     overflow: scroll;
     margin-bottom: 3em;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 2.5%;
 }
 
 .user-card {
@@ -325,10 +328,12 @@ main {
     padding-top: 5px;
     width: 100%;
     padding-left: 15px;
+    box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
 }
 
 .user-card:hover {
     background: rgb(222, 222, 222);
+    box-shadow: 0 0 21px -4px rgba(0, 0, 0, 0.8);
 }
 
 .user-card-image {
