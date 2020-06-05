@@ -567,3 +567,13 @@ main {
     text-align: right;
     vertical-align: top;
 }
+
+#edit-review-button {
+    margin-right: 15px;
+    background-image: linear-gradient( 109.6deg, rgba(255,158,27,1) 11.2%, rgba(255,207,84,1) 91.1% );
+}
+
+#trash-review-button {
+    margin-right: 15px;
+    background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
+}
