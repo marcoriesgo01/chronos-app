@@ -3,28 +3,31 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/authActions";
+import { get } from "http";
 
 class CategoryDashboard extends Component {
 
   state = {
     currentCategory: [],
-    userProfile: []
+    userProfile: [],
+    userReviews: []
   }
 
   componentDidMount() {
     const {category} = this.props.location.state;
     const {user} = this.props.location.state;
     this.setState({currentCategory: category, userProfile: user});
+    this.getUserReviews();
     // this.getCategoryUsers();
   }
 
-//   getCategoryUsers = () =>  {
-//     const {category} = this.props.location.state;
-//     fetch('/api/users/' + category.name)
-//     .then(res => res.json())
-//     .then(jsonedUsers => this.setState({categoryUsers: jsonedUsers}))
-//     .catch( error => console.error(error))
-//   }
+  getUserReviews = () =>  {
+    const {user} = this.props.location.state;
+    fetch('/api/reviews/' + user._id)
+    .then(res => res.json())
+    .then(jsonedReviews => this.setState({userReviews: jsonedReviews}))
+    .catch( error => console.error(error))
+  }
 
   // Logout
   onLogoutClick = e => {
@@ -38,13 +41,15 @@ class CategoryDashboard extends Component {
   
   render() {
 
-    const { auth } = this.props.auth;
+    console.log(this.props.auth.user);
     const {category} = this.props.location.state;
     const {user} = this.props.location.state;
     // console.log(category)
     // console.log(this.props.auth.user)
     console.log(category)
+    console.log(user)
     console.log(this.state.userProfile)
+    console.log(this.state.userReviews)
     
     return (
       <div id="category-main-container">
@@ -104,6 +109,12 @@ class CategoryDashboard extends Component {
                   Post a Review
                 </button>
               </div>
+              { this.state.userReviews.length >= 1 ?
+                <div className="no-user-reviews-container">
+                  <h5 className="no-user-reviews-text-line-one">{user.name.split(" ")[0]} has no reviews yet.</h5>
+                  <h5 className="no-user-reviews-text-line-two">Add a review to contribute to {user.name.split(" ")[0]}'s profile.</h5>
+                </div>
+              : null }
             </div>
         </div>
         :null }   

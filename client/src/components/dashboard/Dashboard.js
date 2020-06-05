@@ -32,6 +32,7 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
+    
     let dashboardContent;
     if (this.state.categories.length === 0 ) {
       dashboardContent = <Spinner />;
