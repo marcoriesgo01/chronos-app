@@ -174,10 +174,9 @@ class CategoryDashboard extends Component {
                 </button>
               </div>
               { this.state.createReview ?
-                <div className="row">
-                  <form className="col s12" onSubmit={this.handleReviewSubmit}>
-                    <div className="row">
-                      <div class="input-field col s1">
+                  <form onSubmit={this.handleReviewSubmit}  className="review-form-parent-container">
+                    <div className="form-left-container">
+                      <div class="rating-form-div">
                         <select class="browser-default" 
                           onChange={this.handleChange}
                           id="rating"
@@ -191,17 +190,17 @@ class CategoryDashboard extends Component {
                           <option value="5">5</option>
                         </select>
                       </div>
-                      <div className="input-field col s6">
-                        <input type="text" id="comment" name="comment" className="validate" onChange={this.handleChange} />
-                        <label htmlFor="amount">Review</label>
+                      <div className="comment-form-div">
+                        <input type="text" id="comment" name="comment" className="validate" onChange={this.handleChange} placeholder="Comment" />
                       </div>
-                      <input type="submit" className="btn" id="budget-form-button" value="Enter"/>
-                      <button onClick={this.handleCloseReviewForms} className="btn" id="budget-form-cancel-button">
+                    </div>
+                    <div className="form-right-container">
+                      <input type="submit" className="btn" id="enter-button" value="Enter"/>
+                      <button onClick={this.handleCloseReviewForms} className="btn" id="cancel-button">
                         Cancel
                       </button>
                     </div>
                   </form>
-                </div>
               :null }
               { this.state.userReviews.length < 1 ?
                 <div className="no-user-reviews-container">

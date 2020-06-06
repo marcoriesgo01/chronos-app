@@ -577,3 +577,53 @@ main {
     margin-right: 15px;
     background-image: linear-gradient( 107.2deg,  rgb(169, 11, 11) 0%, rgba(247,0,0,1) 81.1% );
 }
+
+
+.form-left-container {
+    display: inline-block;
+    width: 70%;
+}
+
+.rating-form-div {
+    display: inline-block;
+    width: 15%;
+    margin-right: 2%;
+}
+
+.comment-form-div {
+    display: inline-block;
+    width: 78%;
+}
+
+.form-right-container {
+    display: inline-block;
+    width: 20%;
+}
+
+#enter-button {
+    margin-right: 4px;
+    border: 2px solid rgba(20,112,147,1);
+    background: white;
+    color: rgba(20,112,147,1);
+    font-weight: bold;
+}
+
+#enter-button:hover {
+    text-decoration: underline;
+}
+
+#cancel-button {
+    margin-left: 4px;
+    border: 2px solid grey;
+    background: white;
+    color: grey;
+    font-weight: bold;
+}
+
+#cancel-button:hover {
+    text-decoration: underline;
+}
+
+.review-form-parent-container {
+    margin-bottom: 2em;
+}
