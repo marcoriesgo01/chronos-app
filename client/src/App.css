@@ -182,19 +182,28 @@ a {
     }
 }
 
+.dashboard-container {
+    width: 90%;
+    margin-left: 5%;
+}
+
 .categories-container {
     display: inline-block;
     text-align: center;
+    width: 100%;
 }
 
 .card{
-    width: 240px;
-    height: 205px !important;
+    width: 20%;
+    min-width: 240px;
+    height: 10%;
     display: inline-block;
-    border-radius: 5px;
+    margin-bottom: 2em;
+    border-radius: 15px;
     border: 1px solid rgba(70,171,158,1);
     color: black;
-    margin-left: 2em;
+    margin-left:2em;
+    margin-right: 2em;
     box-shadow: 0 0 21px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -204,9 +213,9 @@ a {
 
 .card-image {
     margin-top: 0px;
-    height: 165px;
-    width: 170px;
-    margin-left: 13%;
+    height: auto;
+    width: 70%;
+    margin-left: 15%;
     margin-bottom: 0;
 }
 
