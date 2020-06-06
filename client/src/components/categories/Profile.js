@@ -140,7 +140,7 @@ handleEditReviewSubmit = (event) => {
   
   render() {
 
-    // console.log(this.props.auth.user);
+    console.log(this.props.auth.user);
     const {category} = this.props.location.state;
     const {user} = this.props.location.state;
     // console.log(category)
@@ -149,7 +149,7 @@ handleEditReviewSubmit = (event) => {
     // console.log(this.state.userProfile)
     // console.log(this.state.userReviews)
 
-    console.log(this.state.editingReviewId)
+    // console.log(this.state.editingReviewId)
     
     return (
       <div id="category-main-container">
@@ -281,7 +281,7 @@ handleEditReviewSubmit = (event) => {
                           <div className="review-item-content">
                               <div className="review-item-top-content">
                                 <div className="review-item-top-left-content">
-                                  <h5>Written by {review.authorName}</h5>
+                                { review.author == this.props.auth.user.id ? <h5>Written by you.</h5> : <h5>Written by {review.authorName}</h5> }
                                 </div>
                                 <div className="review-item-top-right-content">
                                   <h5>  
@@ -299,6 +299,7 @@ handleEditReviewSubmit = (event) => {
                                 <div className="review-item-bottom-left-content">
                                   <h5>{review.comment}</h5>
                                 </div>
+                                { review.author == this.props.auth.user.id ?
                                 <div className="review-item-bottom-right-content">
                                   <button onClick={() => this.handleOpenEditReview(review)} className="btn btn-small btn-floating waves-effect waves-light hoverable" id="edit-review-button">
                                     <i className="material-icons">mode_edit</i>
@@ -307,6 +308,7 @@ handleEditReviewSubmit = (event) => {
                                     <i className="material-icons">delete</i>
                                   </button>
                                 </div>
+                                : null }
                               </div>
                           </div>
                       </div>
