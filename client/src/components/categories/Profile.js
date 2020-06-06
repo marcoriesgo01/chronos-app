@@ -15,8 +15,10 @@ class CategoryDashboard extends Component {
     userReviews: [],
     createReview: false,
     editReview: false,
-    rating: 4,
-    comment: ""
+    rating: 5,
+    comment: "",
+    editingReviewId: "",
+    user: this.props.location.state.user.id
   }
 
   componentDidMount() {
@@ -67,12 +69,23 @@ class CategoryDashboard extends Component {
     this.setState({createReview: true, editReview: false})
   }
 
-  handleOpenEditReview = () => {
-    this.setState({createReview: false, editReview: true})
+  handleOpenEditReview = (review) => {
+    this.setState({createReview: false, 
+      editReview: true, 
+      rating: review.rating, 
+      comment: review.comment, 
+      editingReviewId: review._id
+    })
   }
 
   handleCloseReviewForms = () => {
-    this.setState({createReview: false, editReview: false})
+    this.setState({
+      createReview: false, 
+      editReview: false, 
+      rating: 5, 
+      comment:"", 
+      editingReviewId: ""
+    })
   }
 
   //submit review
@@ -103,6 +116,27 @@ class CategoryDashboard extends Component {
   .then(this.getUserReviews)
   .catch(error => console.error({ Error: error }));
 }
+
+//submit review edit:
+handleEditReviewSubmit = (event) => {
+  event.preventDefault()
+  fetch('/api/reviews/' + this.state.editingReviewId,{
+      body: JSON.stringify({
+        author: this.props.auth.user.id,
+        authorName: this.props.auth.user.name,
+        rating: this.state.rating,
+        reviewedUser: this.state.user,
+        comment: this.state.comment
+      }),
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(this.handleCloseReviewForms)
+    .then(this.getUserReviews)
+    .catch(error => console.error({ Error: error }));
+}
   
   render() {
 
@@ -114,6 +148,8 @@ class CategoryDashboard extends Component {
     // console.log(category)
     // console.log(this.state.userProfile)
     // console.log(this.state.userReviews)
+
+    console.log(this.state.editingReviewId)
     
     return (
       <div id="category-main-container">
@@ -202,6 +238,35 @@ class CategoryDashboard extends Component {
                     </div>
                   </form>
               :null }
+              { this.state.editReview ?
+                  <form onSubmit={this.handleEditReviewSubmit}  className="review-form-parent-container">
+                    <div className="form-left-container">
+                      <div class="rating-form-div">
+                        <select class="browser-default" 
+                          onChange={this.handleChange}
+                          id="rating"
+                          name="rating"
+                          type="number">
+                          <option value="" disabled selected>{this.state.rating}</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                      <div className="comment-form-div">
+                        <input type="text" id="comment" name="comment" className="validate" onChange={this.handleChange} value={this.state.comment} />
+                      </div>
+                    </div>
+                    <div className="form-right-container">
+                      <input type="submit" className="btn" id="enter-button" value="Enter"/>
+                      <button onClick={this.handleCloseReviewForms} className="btn" id="cancel-button">
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+              :null }
               { this.state.userReviews.length < 1 ?
                 <div className="no-user-reviews-container">
                   <h5 className="no-user-reviews-text-line-one">{user.name.split(" ")[0]} has no reviews yet.</h5>
@@ -235,7 +300,7 @@ class CategoryDashboard extends Component {
                                   <h5>{review.comment}</h5>
                                 </div>
                                 <div className="review-item-bottom-right-content">
-                                  <button onClick={() => this.deleteReview(review._id)} className="btn btn-small btn-floating waves-effect waves-light hoverable" id="edit-review-button">
+                                  <button onClick={() => this.handleOpenEditReview(review)} className="btn btn-small btn-floating waves-effect waves-light hoverable" id="edit-review-button">
                                     <i className="material-icons">mode_edit</i>
                                   </button>
                                   <button onClick={() => this.deleteReview(review._id)} className="btn btn-small btn-floating waves-effect waves-light hoverable" id="trash-review-button">
