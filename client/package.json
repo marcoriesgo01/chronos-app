@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.18.2",
+    "@commercial/items": "^2.2.0",
     "@material-ui/core": "^4.9.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -10,13 +12,16 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
+    "infinite-react-carousel": "^1.2.11",
     "is-empty": "^1.2.0",
     "jwt-decode": "^2.2.0",
     "material-table": "^1.57.2",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.27.1",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
+    "react-elastic-carousel": "^0.6.4",
     "react-plaid-link-button": "0.0.4",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
@@ -24,7 +29,8 @@
     "react-star-rating-component": "^1.4.1",
     "react-star-ratings": "^2.3.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

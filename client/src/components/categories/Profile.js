@@ -140,7 +140,7 @@ handleEditReviewSubmit = (event) => {
   
   render() {
 
-    console.log(this.props.auth.user);
+    // console.log(this.props.auth.user);
     const {category} = this.props.location.state;
     const {user} = this.props.location.state;
     // console.log(category)

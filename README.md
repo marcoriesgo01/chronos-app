@@ -1,13 +1,7 @@
-# Electrum
+# Chronos
 
 ### Heroku Hosted Electrum App Link:
 https://electrum-finance.herokuapp.com/
-
-### Link to Frontend Github Repository:
-https://github.com/marcoriesgo01/electrum-client
-
-### Link to Backend Github Repository:
-https://github.com/marcoriesgo01/electrum-api
 
 Electrum is an all-in-one personal finance application for users to link their bank accounts and analyze all of their financial data. Electrum users are able to link and analyze their bank transactions, create and optimize monthly budgets, review monthly bills, and track their investments in real-time. 
 
