@@ -15,7 +15,7 @@ class Landing extends Component {
     return (
       <div style={{ height: "100vh" }}>
         <div className="landing-left-container">
-          <h5 id="welcome-text">Welcome to Electrum. The easiest way to stay on top of your bank accounts and keep track of your finances and budgets.</h5>
+          <h5 id="welcome-text">Welcome! On Chronos, you can now trade skills time with other users free of charge. Find other users offering what you need and trade your time for theirs!</h5>
           <Link to="/register" className="btn btn-large waves-effect hoverable" id="register-button">
             Register
           </Link>
