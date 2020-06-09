@@ -1,7 +1,7 @@
 # Chronos
 
 ### Heroku Hosted Chronos App Link:
-<!-- https://electrum-finance.herokuapp.com/ --> link application
+https://chronos-application.herokuapp.com/
 
 Electrum is an all-in-one personal finance application for users to link their bank accounts and analyze all of their financial data. Electrum users are able to link and analyze their bank transactions, create and optimize monthly budgets, review monthly bills, and track their investments in real-time. 
 
