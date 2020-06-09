@@ -42,16 +42,19 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 
-//Server static assts if in production:
-if (process.env.NODE_ENV === 'production') { 
-  //set static folder
-  app.use(express.static('client/build'));
-}
-
 // Routes
 app.use("/api/users", users);
 app.use("/api/categories", categories);
 app.use("/api/reviews", reviews);
 
+//Server static assts if in production:
+if (process.env.NODE_ENV === 'production') { 
+  //set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => console.log("Server running on port:", port));
