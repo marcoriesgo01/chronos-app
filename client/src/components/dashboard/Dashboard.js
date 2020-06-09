@@ -34,38 +34,45 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
-
-    return (
-      <div className="row">
-        <div className="dashboard-nav-header">
-          <h4 className="welcome-user">
-            Welcome, {user.name.split(" ")[0]}
-          </h4>
-          <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="log-out-button">
-            Logout
-          </button>
-          <h5 id="how-help-text">What are you hoping to find today?</h5>
-        </div>
-        <div className="categories-container">
-        {this.state.categories.map( category => {
-            return (
-              <Link to={{pathname: `/category/${category._id}`, state: {category: category}}}>
-              <div className="card">
-                  <div className="card-image">
-                      <img src={category.image} alt="category"/>
-                  </div>
-                  <div className="card-content">
-                      <h5>{category.name}</h5>
-                  </div>
-              </div>
-            </Link>
-            )
-          })}
-        </div>
-      </div>
-    );
     
- }
+    let dashboardContent;
+    if (this.state.categories.length === 0 ) {
+      dashboardContent = <Spinner />;
+      dashboardContent = <p className="center-align">Loading...</p>;
+    } else {
+      // User has no accounts linked
+      dashboardContent = (
+        <div className="row">
+          <div className="dashboard-nav-header">
+            <h4 className="welcome-user">
+              Welcome, {user.name.split(" ")[0]}
+            </h4>
+            <button onClick={this.onLogoutClick} className="btn waves-effect waves-light hoverable" id="log-out-button">
+              Logout
+            </button>
+            <h5 id="how-help-text">What are you hoping to find today?</h5>
+          </div>
+          <div className="categories-container">
+          {this.state.categories.map( category => {
+              return (
+                <Link to={{pathname: `/category/${category._id}`, state: {category: category}}}>
+                <div className="card">
+                    <div className="card-image">
+                        <img src={category.image} alt="category"/>
+                    </div>
+                    <div className="card-content">
+                        <h5>{category.name}</h5>
+                    </div>
+                </div>
+              </Link>
+              )
+            })}
+          </div>
+        </div>
+      );
+    }
+  return <div className="dashboard-container">{dashboardContent}</div>;
+  }
 }
 
 Dashboard.propTypes = {
