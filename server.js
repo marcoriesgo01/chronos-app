@@ -15,10 +15,10 @@ const port = process.env.PORT || 5000 // process.env.port is Heroku's port if yo
 // DB Config
 const db = require("./config/keys").mongoURI;
 
-// const MONGODB_URI = process.env.MONGODB_URI || db
+const MONGODB_URI = process.env.MONGODB_URI || db
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const connected = mongoose.connection;
 
