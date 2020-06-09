@@ -4,11 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "client": "npm start --prefix client"
   },
   "author": "",
   "license": "ISC",
