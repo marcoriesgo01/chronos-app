@@ -3,9 +3,7 @@
 ### Heroku Hosted Chronos App Link:
 https://chronos-application.herokuapp.com/
 
-Electrum is an all-in-one personal finance application for users to link their bank accounts and analyze all of their financial data. Electrum users are able to link and analyze their bank transactions, create and optimize monthly budgets, review monthly bills, and track their investments in real-time. 
-
-Chronos is a social network for users to find people willing to exchange skilled time without monetary obligations or payments. Users ar able to sign up and identify themselves with a skill category and find other users to contact for their skills. Users can se and display their skill expertise, years of experience and reviews posted by other users about. 
+Chronos is a social network for users to find people willing to exchange skilled time without monetary obligations or payments. Users ar able to sign up and identify themselves with a skill category and find other users to contact for their skills. Users can see and display their skill expertise, years of experience and reviews posted by other users about. 
 
 ## Technologies Used
 * HTML5
